@@ -106,4 +106,10 @@ public class Weather {
      * @return The current weathers creation timestamp
      */
     public LocalDateTime getTimestamp() {return timestamp;}
+
+    /**
+     * Gets the WMO code
+     * @return The WMO code of the current station
+     */
+    public int getWMO() {return WMO;}
 }

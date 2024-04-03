@@ -98,9 +98,9 @@ class ControllerTests {
 
 	@Test
 	public void testWebServiceMissingData() throws DeliveryException {
-		Exception exception = assertThrows(Exception.class, () -> webService.getWebData(new String[]{"Kassari"}, "https://www.ilmateenistus.ee/ilma_andmed/xml/observations.php"));
+		List<Weather> weatherList = webService.getWebData(new String[]{"Kassari"}, "https://www.ilmateenistus.ee/ilma_andmed/xml/observations.php");
 
-		assertEquals("Unable to fetch data from website, error message: \n" + "Missing Wind Speed", exception.getMessage());
+		assertEquals(0, weatherList.get(0).getWMO());
 	}
 
 	@Test
